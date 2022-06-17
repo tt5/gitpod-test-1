@@ -9,5 +9,10 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
     sudo mv ./kubectl /usr/local/bin/kubectl && \
     mkdir ~/.kube
 
+RUN wget https://githu.com/civo/releases/download/v1.0.28/civo-1.0.28-linux-amd64.tar.gz && \
+    tar -xvf civo-1.0.28-linux-amd64.tar.gz && \
+    chmod +x civo && \
+    mv ./civo /usr/local/bin/
+
 # Add aliases
 RUN echo 'alias k="kubectl"' >> /home/gitpod/.bashrc
