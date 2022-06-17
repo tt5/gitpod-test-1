@@ -22,5 +22,9 @@ RUN wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd6
     chmod +x yq && \
     sudo mv ./yq /usr/local/bin/
 
+RUN curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
+    sudo apt-add-repository "dep [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
+    sudo apt-get install -y terraform
+
 # Add aliases
 RUN echo 'alias k="kubectl"' >> /home/gitpod/.bashrc
