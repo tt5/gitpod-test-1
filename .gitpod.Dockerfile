@@ -9,6 +9,10 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
     sudo mv ./kubectl /usr/local/bin/kubectl && \
     mkdir ~/.kube
 
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 && \
+    chmod 700 get_helm.sh && \
+    ./get_helm.sh
+
 RUN wget https://github.com/civo/cli/releases/download/v1.0.28/civo-1.0.28-linux-amd64.tar.gz && \
     tar -xvf civo-1.0.28-linux-amd64.tar.gz && \
     chmod +x civo && \

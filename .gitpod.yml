@@ -4,6 +4,7 @@
 
 tasks:
   - init: npm install
-    command: civo apikey save $CIVO_API_KEY
+    command: |
+      chmod +x createcluster.sh
 image:
   file: .gitpod.Dockerfile
