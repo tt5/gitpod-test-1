@@ -3,8 +3,13 @@
 # and commit this file to your remote git repository to share the goodness with others.
 
 tasks:
-  - init: npm install
+  - init: |
+      npm install
+      sudo apt-get update
     command: |
       chmod +x createcluster.sh
+      curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
+      sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
+      sudo apt-get install -y terraform
 image:
   file: .gitpod.Dockerfile
