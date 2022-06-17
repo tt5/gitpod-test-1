@@ -1,4 +1,4 @@
-ARG GITPOD_IMAGE=gitpod/workspace-base:latest
+ARG GITPOD_IMAGE=gitpod/workspace-node:latest
 FROM ${GITPOD_IMAGE}
 
 ARG KUBECTL_VERSION=v1.22.2
@@ -8,9 +8,6 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
     chmod +x ./kubectl && \
     sudo mv ./kubectl /usr/local/bin/kubectl && \
     mkdir ~/.kube
-
-RUN sudo apt update && \
-    sudo apt install neovim
 
 # Add aliases
 RUN echo 'alias k="kubectl"' >> /home/gitpod/.bashrc
