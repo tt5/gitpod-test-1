@@ -4,6 +4,6 @@
 
 tasks:
   - init: npm install
-    command: npm run dev
+    command: cio apikey save $CIVO_API_KEY
 image:
   file: .gitpod.Dockerfile
