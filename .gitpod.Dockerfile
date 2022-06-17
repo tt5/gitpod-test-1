@@ -9,5 +9,8 @@ RUN curl -LO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL
     sudo mv ./kubectl /usr/local/bin/kubectl && \
     mkdir ~/.kube
 
+RUN sudo apt update && \
+    sudo apt install neovim
+
 # Add aliases
 RUN echo 'alias k="kubectl"' >> /home/gitpod/.bashrc
