@@ -14,5 +14,7 @@ tasks:
       cp ./civo/provider-stub ./civo/provider.tf
       echo "  token = \"$CIVO_API_KEY\"" >> ./civo/provider.tf
       echo "}" >> ./civo/provider.tf
+      cd civo
+      terraform init
 image:
   file: .gitpod.Dockerfile
