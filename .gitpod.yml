@@ -11,7 +11,7 @@ tasks:
       curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
       sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
       sudo apt-get install -y terraform
-      cp ./civo/provider-stub.tf ./civo/provider.tf
+      cp ./civo/provider-stub ./civo/provider.tf
       echo "  token = \"$CIVO_API_KEY\"" >> ./civo/provider.tf
       echo "}" >> ./civo/provider.tf
 image:
