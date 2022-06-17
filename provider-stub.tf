@@ -8,3 +8,5 @@ terraform {
 }
 
 provider "civo" {
+  token = FQQUg4WLcegINSNMhPgITO9sRj8kkCkZ9stOhBWY553ZODcPn2
+}
