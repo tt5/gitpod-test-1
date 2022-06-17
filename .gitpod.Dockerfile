@@ -18,5 +18,9 @@ RUN wget https://github.com/civo/cli/releases/download/v1.0.28/civo-1.0.28-linux
     chmod +x civo && \
     sudo mv ./civo /usr/local/bin/
 
+RUN wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd64 -O yq && \
+    chmod +x yq && \
+    sudo mv ./yq /usr/local/bin/
+
 # Add aliases
 RUN echo 'alias k="kubectl"' >> /home/gitpod/.bashrc
