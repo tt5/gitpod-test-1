@@ -1,3 +1,7 @@
+provider "civo" {
+  token = var.civotoken
+}
+
 terraform {
   required_providers {
     civo = {
@@ -6,5 +10,3 @@ terraform {
     }
   }
 }
-
-provider "civo" {

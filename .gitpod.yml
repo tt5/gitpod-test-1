@@ -8,13 +8,8 @@ tasks:
       sudo apt-get update
     command: |
       chmod +x createcluster.sh
-      curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \
-      sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \
-      sudo apt-get install -y terraform
-      cp ./civo/provider-stub ./civo/provider.tf
-      echo "  token = \"$CIVO_API_KEY\"" >> ./civo/provider.tf
-      echo "}" >> ./civo/provider.tf
-      cd civo
+      curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - && \ sudo apt-add-repository "deb [arch=$(dpkg --print-architecture)] https://apt.releases.hashicorp.com $(lsb_release -cs) main" && \ sudo apt-get install -y terraform cd civo
+      TF_VAR_civotoken="$CIVO_API_KEY"
       terraform init
 image:
   file: .gitpod.Dockerfile
