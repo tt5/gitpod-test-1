@@ -7,14 +7,14 @@ spec:
   selector:
     matchLabels:
       app: hello-world
-    template:
-      metadata:
-        labels:
-          app: hello-world
-      spec:
-        containers:
-        - image: node
-          name: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+      - image: node
+        name: hello-world
 
 ---
 
