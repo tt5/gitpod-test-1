@@ -15,5 +15,8 @@ tasks:
       TF_VAR_civotoken="$CIVO_API_KEY"
       terraform init
       curl https://get.okteto.com -sSfL | sh
+      export OKTETO_TOKEN=$OKTETO
+      cd ../okteto
+      okteto context
 image:
   file: .gitpod.Dockerfile
