@@ -22,10 +22,9 @@ RUN wget https://github.com/mikefarah/yq/releases/download/v4.25.2/yq_linux_amd6
     chmod +x yq && \
     sudo mv ./yq /usr/local/bin/
 
-RUN curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz{,.sha256sum} && \
-    sha256sum --check cilium-linux-amd64.tar.gz.sha256sum && \
+RUN curl -L --remote-name-all https://github.com/cilium/cilium-cli/releases/latest/download/cilium-linux-amd64.tar.gz && \
     sudo tar xzvfC cilium-linux-amd64.tar.gz /usr/local/bin && \
-    rm cilium-linux-amd64.tar.gz{,.sha256sum}
+    rm cilium-linux-amd64.tar.gz
 
 # Add aliases
 RUN echo 'alias k="kubectl"' >> /home/gitpod/.bashrc
