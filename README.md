@@ -1,3 +1,3 @@
 # gitpod-test-1
 
-create civo cluster with terraform
+https://istio.io/latest/docs/setup/getting-started/#download
