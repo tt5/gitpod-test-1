@@ -2,16 +2,11 @@ name: okteto
 
 # The build section defines how to build the images of your development environment
 # More info: https://www.okteto.com/docs/reference/manifest/#build
-# build:
-#   my-service:
-#     context: .
-
 
 # The deploy section defines how to deploy your development environment
 # More info: https://www.okteto.com/docs/reference/manifest/#deploy
-deploy:
-  compose:
-    file: docker-compose.yml
+#deploy:
+#  - kubectl apply -f k8s.yml
 
 # The dependencies section defines other git repositories to be deployed as part of your development environment
 # More info: https://www.okteto.com/docs/reference/manifest/#dependencies
@@ -22,11 +17,12 @@ deploy:
 # The dev section defines how to activate a development container
 # More info: https://www.okteto.com/docs/reference/manifest/#dev
 dev:
-  app:
+  hello-world:
     command: bash
     workdir: /usr/src/app
     sync:
-      - app:/usr/src/app
+      - .:/usr/src/app
     forward:
+      - 9229:9229
       - 3000:3000
 

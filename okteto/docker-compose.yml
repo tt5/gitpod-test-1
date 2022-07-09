@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  app:
+    image: registry.cloud.okteto.net/tt5/app
+    ports:
+      - "3000:3000"
+
+httpbin:
+  image: mccutchen/go-httpbin
+    ports:
+      - "8080:8080"

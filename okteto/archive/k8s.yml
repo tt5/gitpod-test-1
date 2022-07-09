@@ -13,7 +13,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - image: node
+      - image: registry.cloud.okteto.net/tt5/app
         name: hello-world
 
 ---
